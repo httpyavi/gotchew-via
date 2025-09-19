@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page title displayed in the browser tab -->
+        <title>Gotchew - Chews Joy Every Day</title>
+        <!-- Meta tag for responsive viewport scaling -->
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <!-- Google Fonts: Import Montserrat and Poppins for typography -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome 5: Used for icons like search, cart, etc. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Font Awesome 6: Additional icons for features section -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <!-- External stylesheet for styling the page -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Top Banner: Displays promotional message -->
+        <div class="top-banner">
+            Nationwide delivery. Free shipping for orders P2,500 and above within Metro Manila! Use GOTCHEW10 for discount.
+        </div>
+
+        <!-- Header Section -->
+        <header class="header">
+            <!-- Logo container -->
+            <div class="logo">
+                <img src="images/gotchew_black.png" alt="Gotchew Logo">
+            </div>
+            <!-- Navigation menu -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Chew & Shop</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Search bar with icons -->
+            <div class="search-bar">
+                <!-- Search trigger icon -->
+                <i class="fas fa-search search-icon" id="searchTriggerIcon"></i>
+                <!-- Search input field -->
+                <input type="text" placeholder="Sniff out something fun..." id="searchInput">
+                <!-- Clear search icon -->
+                <i class="fas fa-times-circle clear-search-icon" id="clearSearchIcon"></i>
+                <!-- Container for search results -->
+                <div id="searchResults"></div>
+            </div>
+            <!-- Header action icons -->
+            <div class="header-icons">
+                <!-- Favorites icon -->
+                <i class="fas fa-heart icon"></i> 
+                <!-- Cart link icon -->
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i></a>
+                <!-- User profile link icon -->
+                <a href="user.html"><i class="fas fa-user-circle icon"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section: Promotional banner -->
+            <section class="hero-section">
+                <img src="images/Hero 1.png" alt="Hero Image">
+            </section>
+
+            <!-- Brands Section: Display partner brand logos -->
+            <section class="brands-section">
+                <div class="container">
+                    <div class="brand-logo"><img src="images/brands/sheba.png" alt="Sheba"></div>
+                    <div class="brand-logo"><img src="images/brands/whiskas.png" alt="Whiskas"></div>
+                    <div class="brand-logo"><img src="images/brands/pedigree.png" alt="Pedigree"></div>
+                    <div class="brand-logo"><img src="images/brands/good boy.png" alt="Good Boy"></div>
+                    <div class="brand-logo"><img src="images/brands/felix.png" alt="Felix"></div>
+                    <div class="brand-logo"><img src="images/brands/temptations.png" alt="Temptations"></div>
+                </div>
+            </section>
+
+            <!-- Category Section: Browse products by category -->
+            <section class="category-section">
+                <h2>Browse by category</h2>
+                <div class="category-grid">
+                    <!-- Category item with link to shop page -->
+                    <a href="shop.html" class="category-item" data-category="Toys & Enrichment">
+                        <div class="icon-box"><img src="images/category/Toys&Enrichment.png" alt="Toys & Enrichment"></div>
+                        <span>Toys & Enrichment</span>
+                    </a>
+                    <a href="shop.html" class="category-item" data-category="Treats & Chews">
+                        <div class="icon-box"><img src="images/category/Treats&Chews.png" alt="Treats & Chews"></div>
+                        <span>Treats & Chews</span>
+                    </a>
+                    <a href="shop.html" class="category-item" data-category="Health & Grooming">
+                        <div class="icon-box"><img src="images/category/Health&Grooming.png" alt="Health & Grooming"></div>
+                        <span>Health & Grooming</span>
+                    </a>
+                    <a href="shop.html" class="category-item" data-category="Bowls & Feeders">
+                        <div class="icon-box"><img src="images/category/Bowl&Feeders.png" alt="Bowls & Feeders"></div>
+                        <span>Bowls & Feeders</span>
+                    </a>
+                    <a href="shop.html" class="category-item" data-category="Clothing & Lifestyle">
+                        <div class="icon-box"><img src="images/category/Clothing&Lifestyle.png" alt="Clothing & Lifestyle"></div>
+                        <span>Clothing & Lifestyle</span>
+                    </a>
+                    <a href="shop.html" class="category-item" data-category="Pet Tech & Gadgets">
+                        <div class="icon-box"><img src="images/category/PetTech&Gadgets.png" alt="Pet Tech & Gadgets"></div>
+                        <span>Pet Tech & Gadgets</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Paw Picks Section: Best sellers and staff picks -->
+            <section class="paw-picks-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Paw Picks <span class="subtitle">Best Sellers / Staff Picks</span></h2>
+                        <a href="shop.html" class="view-all-button">View All</a>
+                    </div>
+                    <!-- Product grid for dynamically loaded Paw Picks -->
+                    <div class="product-grid" id="pawPicksGrid">
+                        <!-- Products will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Paw Banner: Call to action for pet adoption/donation -->
+            <section class="paw-banner">
+                <div class="paw-banner-hero">
+                    <img src="images/help paws.png" alt="Help a Paw in Need" class="paw-banner-img">
+                    <div class="paw-banner-gradient"></div>
+                    <div class="paw-banner-overlay">
+                        <h2>HELP A PAW IN NEED</h2>
+                        <p>Your love can change an animal's life</p>
+                        <!-- External link to PAWS organization -->
+                        <a href="https://paws.org.ph/" class="button" target="_blank">
+                            Donate, Adopt, Stay informed.
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sniff of the Day Section: Daily product highlights -->
+            <section class="sniff-of-the-day-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Sniff of the Day <span class="subtitle">Daily Discover</span></h2>
+                        <a href="shop.html" class="view-all-button">View All</a>
+                    </div>
+                    <!-- Product grid for dynamically loaded Sniff of the Day products -->
+                    <div class="product-grid" id="sniffOfTheDayGrid">
+                        <!-- Products will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Favorites Section: Popular products -->
+            <section class="customer-favorites-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Customer Favorites <span class="subtitle">Popular and top-reviewed picks</span></h2>
+                        <a href="shop.html" class="view-all-button">View All</a>
+                    </div>
+                    <!-- Product grid for dynamically loaded Customer Favorites -->
+                    <div class="product-grid" id="customerFavoritesGrid">
+                        <!-- Products will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Happy Customers Section: Testimonials -->
+            <section class="happy-customers-section">
+                <div class="container">
+                    <h2>OUR HAPPY CUSTOMERS</h2>
+                    <p class="subtitle">We're trusted by paw-rents across the country for quality, cuteness, and care. Here's what they have to say:</p>
+                    <!-- Overall rating display -->
+                    <div class="rating-summary">
+                        <span class="stars">★★★★★</span>
+                        <span>4.8/5 Rating</span>
+                    </div>
+                </div>
+
+                <!-- Testimonials Carousel -->
+                <div class="testimonials-wrapper">
+                    <div class="testimonials-carousel">
+                        <!-- Original testimonial cards -->
+                        <div class="testimonial-card">
+                            <p class="quote">"I am absolutely delighted with the quality and variety of pet supplies I ordered from Gotchew. From cozy beds to fun toys, every item has been a hit with my furry friend!"</p>
+                            <p class="customer-name">Sarah M.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Finding the right products for my pets used to be a hassle until I found Gotchew. Their extensive selection caters to all my pets' needs, making shopping a breeze!"</p>
+                            <p class="customer-name">Alex K.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"As a pet lover always searching for the best for my companions, I'm thrilled to have discovered Gotchew. Their range of products is not only impressive but also aligns perfectly with the latest trends in pet care!"</p>
+                            <p class="customer-name">James L.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Gotchew has truly transformed how I shop for my pets. The quality of products is unmatched, and my furry friends couldn't be happier. Highly recommend!"</p>
+                            <p class="customer-name">Liam P.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Excellent customer service and fast shipping! Every time I order from Gotchew, I'm impressed by their professionalism and care for pets."</p>
+                            <p class="customer-name">Emily R.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Gotchew's products are always top-notch. My cats love their toys, and the food options are healthy and affordable. Definitely my go-to pet store!"</p>
+                            <p class="customer-name">Carlos D.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"I appreciate the variety Gotchew offers. Whether it's grooming supplies or treats, everything I've bought has exceeded expectations."</p>
+                            <p class="customer-name">Nina T.</p>
+                        </div>
+
+                        <!-- Duplicate testimonial cards for seamless scrolling -->
+                        <div class="testimonial-card">
+                            <p class="quote">"I am absolutely delighted with the quality and variety of pet supplies I ordered from Gotchew. From cozy beds to fun toys, every item has been a hit with my furry friend!"</p>
+                            <p class="customer-name">Sarah M.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Finding the right products for my pets used to be a hassle until I found Gotchew. Their extensive selection caters to all my pets' needs, making shopping a breeze!"</p>
+                            <p class="customer-name">Alex K.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"As a pet lover always searching for the best for my companions, I'm thrilled to have discovered Gotchew. Their range of products is not only impressive but also aligns perfectly with the latest trends in pet care!"</p>
+                            <p class="customer-name">James L.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Gotchew has truly transformed how I shop for my pets. The quality of products is unmatched, and my furry friends couldn't be happier. Highly recommend!"</p>
+                            <p class="customer-name">Liam P.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Excellent customer service and fast shipping! Every time I order from Gotchew, I'm impressed by their professionalism and care for pets."</p>
+                            <p class="customer-name">Emily R.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"Gotchew's products are always top-notch. My cats love their toys, and the food options are healthy and affordable. Definitely my go-to pet store!"</p>
+                            <p class="customer-name">Carlos D.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"I appreciate the variety Gotchew offers. Whether it's grooming supplies or treats, everything I've bought has exceeded expectations."</p>
+                            <p class="customer-name">Nina T.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section: Highlight key benefits -->
+            <section class="features-section">
+                <div class="container">
+                    <div class="feature-item">
+                        <div class="feature-icon-circle blue">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3>Free shipping</h3>
+                        <p>For orders over P1000!</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-circle red">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <h3>Pet-safe materials</h3>
+                        <p>Gentle for all breeds</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-circle orange">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3>Vet Approved</h3>
+                        <p>Trusted by professionals</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section: Subscription form -->
+            <section class="newsletter-section">
+                <div class="container">
+                    <h2 class="newsletter-heading">WANT DEALS THAT MAKE YOUR TAILS WAG?</h2>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address">
+                        <button>Subscribe to our Newsletter</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer class="footer">
+                <div class="container">
+                    <!-- Footer branding and social links -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="images/gotchew_black.png" alt="Gotchew Logo">
+                        </div>
+                        <p class="footer-description">We've got treats, toys, and essentials your pets will love — From our paws to yours.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- My Account links -->
+                    <div class="footer-column">
+                        <h3>MY ACCOUNT</h3>
+                        <ul>
+                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#">My Order History</a></li>
+                            <li><a href="#">My Wish List</a></li>
+                            <li><a href="#">Order Tracking</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company links -->
+                    <div class="footer-column">
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Affiliate</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ links -->
+                    <div class="footer-column">
+                        <h3>FAQ</h3>
+                        <ul>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Manage Deliveries</a></li>
+                            <li><a href="#">Orders</a></li>
+                            <li><a href="#">Payments</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Help links -->
+                    <div class="footer-column">
+                        <h3>HELP</h3>
+                        <ul>
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">Delivery Details</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer bottom with copyright -->
+                <div class="footer-bottom">
+                    <p>© Gotchew 2025. All Rights Reserved</p>
+                </div>
+            </footer>
+        </main>
+        <!-- External JavaScript file for dynamic functionality -->
+        <script src="script.js"></script>
+    </body>
+</html>

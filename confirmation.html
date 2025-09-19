@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page setup: Viewport, title, fonts, and styles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gotchew - Order Confirmation</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Top Banner: Promotional message -->
+        <div class="top-banner">
+            Nationwide delivery. Free shipping for orders P2,500 and above within Metro Manila! Use GOTCHEW10 for discount.
+        </div>
+
+        <!-- Header: Logo, navigation, search bar, and user icons -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/gotchew_black.png" alt="Gotchew Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="shop.html">Chew & Shop</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon" id="searchTriggerIcon"></i>
+                <input type="text" placeholder="Sniff out something fun..." id="searchInput">
+                <i class="fas fa-times-circle clear-search-icon" id="clearSearchIcon"></i>
+                <div id="searchResults"></div>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-heart icon"></i>
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i></a>
+                <a href="user.html"><i class="fas fa-user-circle icon"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content: Order confirmation details -->
+        <main class="confirmation-page-content">
+            <div class="confirmation-container">
+                <!-- Left Section: Confirmation message and billing address -->
+                <div class="confirmation-left">
+                    <h1 class="confirmation-title">Thank you for your purchase!</h1>
+                    <p class="confirmation-message">Your order will be processed within 24 hours during working days. We will notify you by email once your order has been shipped.</p>
+                    <div class="billing-address-section">
+                        <h2>Billing address</h2>
+                        <div class="address-details">
+                            <div class="detail-row">
+                                <span class="label">Name</span>
+                                <span class="value" id="confirmName"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Address</span>
+                                <span class="value" id="confirmAddress"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Phone</span>
+                                <span class="value" id="confirmPhone"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Email</span>
+                                <span class="value" id="confirmEmail"></span>
+                            </div>
+                        </div>
+                        <div class="confirmation-actions">
+                            <a href="#" class="track-order-button">Track Your Order</a>
+                            <a href="homepage.html" class="continue-shopping-button">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section: Order summary -->
+                <div class="confirmation-right">
+                    <div class="order-summary-box">
+                        <h2>Order Summary</h2>
+                        <div class="order-summary-info-row">
+                            <div class="info-item">
+                                <span class="label">Date</span>
+                                <span class="value" id="orderDate">02 May 2023</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Order Number</span>
+                                <span class="value" id="orderNumber">024-125478956</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Payment Method</span>
+                                <span class="value" id="paymentMethod">Mastercard</span>
+                            </div>
+                        </div>
+                        <div class="order-summary-items" id="confirmOrderItems">
+                            <!-- Order items dynamically populated -->
+                        </div>
+                        <div class="order-summary-totals">
+                            <div class="total-row">
+                                <span class="label">Sub Total</span>
+                                <span class="value" id="confirmSubtotal">P0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span class="label">Shipping</span>
+                                <span class="value" id="confirmShipping">P0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span class="label">Tax</span>
+                                <span class="value" id="confirmTax">P0.00</span>
+                            </div>
+                            <div class="total-row order-total">
+                                <span class="label">Order Total</span>
+                                <span class="value" id="confirmOrderTotal">P0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Newsletter Section: Subscription form -->
+        <section class="newsletter-section">
+            <div class="container">
+                <h2 class="newsletter-heading">WANT DEALS THAT MAKE YOUR TAILS WAG?</h2>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button>Subscribe to our Newsletter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Branding, links, and social icons -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/gotchew_black.png" alt="Gotchew Logo">
+                    </div>
+                    <p class="footer-description">We've got treats, toys, and essentials your pets will love — From our paws to yours.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>MY ACCOUNT</h3>
+                    <ul>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">My Order History</a></li>
+                        <li><a href="#">My Wish List</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FAQ</h3>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Manage Deliveries</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Payments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>HELP</h3>
+                    <ul>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Delivery Details</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Gotchew 2025. All Rights Reserved</p>
+            </div>
+        </footer>
+        <!-- External JavaScript for dynamic functionality -->
+        <script src="script.js"></script>
+    </body>
+</html>

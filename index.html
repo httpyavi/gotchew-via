@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - GotChew</title>
+        <!-- Google Fonts: Import Poppins font for consistent typography -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome CDN: Used for password visibility toggle icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            /* General body styling */
+            body {
+                margin: 0;
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(135deg, #a8c0ff, #072AC8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                color: #333;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            /* Container for the login form */
+            .container {
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 50px 60px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                width: 100%;
+                max-width: 550px;
+                box-sizing: border-box;
+                backdrop-filter: blur(5px);
+                height: 690px;
+            }
+
+            /* Logo styling */
+            .logo {
+                margin-bottom: 30px;
+                width: 150px;
+                height: auto;
+            }
+
+            /* Main heading */
+            h2 {
+                font-size: 28px;
+                margin-bottom: 10px;
+                color: #1a202c;
+                font-weight: 600;
+            }
+
+            /* Subtitle text */
+            p.subtitle {
+                font-size: 16px;
+                color: #666;
+                margin-bottom: 30px;
+            }
+
+            /* Form group styling for input fields */
+            .form-group {
+                margin-bottom: 20px;
+                text-align: left;
+            }
+
+            /* Label styling for form inputs */
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                color: #4a5568;
+            }
+
+            /* Input field styling for email, password, and text types */
+            input[type="email"],
+            input[type="password"],
+            input[type="text"] {
+                width: 100%;
+                padding: 12px 15px;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                font-size: 16px;
+                box-sizing: border-box;
+                transition: all 0.3s ease;
+                /* Remove browser-specific input styles */
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+            /* Focus state for input fields */
+            input[type="email"]:focus,
+            input[type="password"]:focus,
+            input[type="text"]:focus {
+                border-color: #4299e1;
+                box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+                outline: none;
+            }
+
+            /* Wrapper for password input to position the toggle icon */
+            .password-input-wrapper {
+                position: relative;
+            }
+
+            /* Adjust padding to accommodate the toggle icon */
+            .password-input-wrapper input {
+                padding-right: 40px;
+            }
+
+            /* Password visibility toggle icon styling */
+            .password-input-wrapper .toggle-password {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: #a0aec0;
+                font-size: 18px;
+            }
+
+            /* Login button styling */
+            button.login-button {
+                width: 100%;
+                padding: 15px;
+                background-color: #072AC8;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                letter-spacing: 0.5px;
+            }
+
+            /* Hover effect for login button */
+            button.login-button:hover {
+                background-color: #051a94;
+                transform: translateY(-2px);
+            }
+
+            /* Sign-up link section */
+            .signup-link {
+                margin-top: 28px;
+                font-size: 15px;
+                color: #666;
+            }
+
+            /* Styling for the sign-up link */
+            .signup-link a {
+                color: #072AC8;
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s ease;
+            }
+
+            /* Hover effect for sign-up link */
+            .signup-link a:hover {
+                color: #5a40b9;
+                text-decoration: underline;
+            }
+
+            /* Message box for success/error feedback */
+            .message-box {
+                margin-top: 20px;
+                padding: 10px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                text-align: center;
+                visibility: hidden;
+                min-height: 40px;
+                box-sizing: border-box;
+            }
+
+            /* Success message styling */
+            .message-box.success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                visibility: visible;
+            }
+
+            /* Error message styling */
+            .message-box.error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+                visibility: visible;
+            }
+
+            /* Placeholder text styling */
+            input::placeholder {
+                color: #a0aec0;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Main container for the login form -->
+        <div class="container">
+            <!-- Logo image -->
+            <img src="images/gotchew_black.png" alt="GotChew Logo" class="logo">
+            <!-- Welcome message -->
+            <h2>Welcome Back!</h2>
+            <p class="subtitle">We missed you. Please enter your details</p>
+
+            <!-- Login form -->
+            <form id="loginForm">
+                <!-- Email input field -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" value="admin@gmail.com" required>
+                </div>
+                <!-- Password input field with visibility toggle -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" value="admin123" required>
+                        <span class="toggle-password">
+                            <!-- Eye icon for toggling password visibility -->
+                            <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                        </span>
+                    </div>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="login-button">Log in</button>
+                <!-- Message box for success/error feedback -->
+                <div id="loginMessage" class="message-box"></div>
+            </form>
+
+            <!-- Link to sign-up page -->
+            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+
+        <script>
+            // Hardcoded admin credentials for validation
+            const ADMIN_EMAIL = 'admin@gmail.com';
+            const ADMIN_PASSWORD = 'admin123';
+
+            // DOM element references
+            const loginForm = document.getElementById('loginForm');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const loginMessage = document.getElementById('loginMessage');
+            const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+
+            // Toggle password visibility
+            togglePasswordIcon.addEventListener('click', function() {
+                // Check current input type
+                const isPassword = passwordInput.type === 'password';
+                // Switch between password and text type
+                passwordInput.type = isPassword ? 'text' : 'password';
+                // Update icon based on visibility state
+                togglePasswordIcon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
+            });
+
+            // Ensure placeholder doesn't interfere with visibility toggle
+            passwordInput.addEventListener('input', function() {
+                // Retain input value during visibility toggle
+                this.setAttribute('value', this.value);
+            });
+
+            // Handle form submission
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Get and trim input values
+                const enteredEmail = emailInput.value.trim();
+                const enteredPassword = passwordInput.value.trim();
+
+                // Clear previous messages
+                loginMessage.textContent = '';
+                loginMessage.className = 'message-box';
+
+                // Validate credentials against hardcoded admin values
+                if (enteredEmail === ADMIN_EMAIL && enteredPassword === ADMIN_PASSWORD) {
+                    // Display success message
+                    loginMessage.textContent = 'Login Successful! Welcome, Admin.';
+                    loginMessage.classList.add('success');
+                    // Redirect to homepage after a 1-second delay
+                    setTimeout(() => {
+                        window.location.href = 'homepage.html';
+                    }, 1000);
+                } else {
+                    // Display error message
+                    loginMessage.textContent = 'Invalid email or password. Please try again.';
+                    loginMessage.classList.add('error');
+                }
+            });
+        </script>
+    </body>
+</html>

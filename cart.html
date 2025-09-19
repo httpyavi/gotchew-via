@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page setup: Encoding, viewport, title, fonts, and styles -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gotchew - Your Cart</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Header: Logo, navigation, search bar, and user icons -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/gotchew_black.png" alt="Gotchew Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="shop.html">Chew & Shop</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon" id="searchTriggerIcon"></i>
+                <input type="text" placeholder="Sniff out something fun..." id="searchInput">
+                <i class="fas fa-times-circle clear-search-icon" id="clearSearchIcon"></i>
+                <div id="searchResults"></div>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-heart icon"></i>
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i></a>
+                <i class="fas fa-user-circle icon"></i>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs: Navigation path -->
+        <div class="breadcrumbs-container">
+            <div class="container">
+                <div id="breadcrumbs">
+                    <a href="homepage.html">Home</a>
+                    <a href="shop.html">Chew & Shop</a>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content: Cart display -->
+        <main class="cart-page-content">
+            <!-- Empty cart message with link to shop -->
+            <div id="emptyCartMessage">
+                Your cart is empty.
+                <a href="shop.html" class="continue-shopping-text">Continue Shopping</a>
+            </div>
+            <!-- Cart content: Items and order summary -->
+            <div class="cart-content" id="cartContent">
+                <!-- Left section: Cart items -->
+                <section class="cart-left">
+                    <h1 class="cart-header">YOUR CART</h1>
+                    <div id="cartItemsContainer">
+                        <!-- Cart items dynamically populated -->
+                    </div>
+                </section>
+                <!-- Right section: Order summary -->
+                <section class="cart-right order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="order-summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">P0.00</span>
+                    </div>
+                    <div class="order-summary-row">
+                        <span>Discount (<span id="discountPercentage">0</span>%)</span>
+                        <span style="color: #dc3545;" id="discount">-P0.00</span>
+                    </div>
+                    <div class="order-summary-row">
+                        <span>Delivery Fee</span>
+                        <span id="deliveryFee">P0.00</span>
+                    </div>
+                    <div class="order-summary-row total">
+                        <span>Total</span>
+                        <span id="total">P0.00</span>
+                    </div>
+                    <!-- Promo code input -->
+                    <div class="promo-code">
+                        <input type="text" id="promoCodeInput" placeholder="Add promo code">
+                        <button id="applyPromoCode">Apply</button>
+                    </div>
+                    <a href="checkout.html" class="checkout-button">Go to Checkout</a>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer: Branding, links, and social icons -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/gotchew_black.png" alt="Gotchew Logo">
+                    </div>
+                    <p class="footer-description">We've got treats, toys, and essentials your pets will love — From our paws to yours.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>MY ACCOUNT</h3>
+                    <ul>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">My Order History</a></li>
+                        <li><a href="#">My Wish List</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FAQ</h3>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Manage Deliveries</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Payments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>HELP</h3>
+                    <ul>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Delivery Details</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Gotchew 2025. All Rights Reserved</p>
+            </div>
+        </footer>
+        <!-- External JavaScript for dynamic functionality -->
+        <script src="script.js"></script>
+    </body>
+</html>

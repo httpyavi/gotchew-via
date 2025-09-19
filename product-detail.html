@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page title displayed in the browser tab -->
+        <title>Gotchew - Product Details</title>
+        <!-- Meta tag for responsive viewport scaling -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Google Fonts: Import Montserrat and Poppins for typography -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome 6: Used for icons like search, cart, etc. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <!-- External stylesheet for styling the page -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header class="header">
+            <!-- Logo container -->
+            <div class="logo">
+                <img src="images/gotchew_black.png" alt="Gotchew Logo">
+            </div>
+
+            <!-- Navigation menu -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Chew & Shop</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search bar with icons -->
+            <div class="search-bar">
+                <i class="fas fa-search search-icon" id="searchTriggerIcon"></i>
+                <input type="text" placeholder="Sniff out something fun..." id="searchInput">
+                <i class="fas fa-times-circle clear-search-icon" id="clearSearchIcon"></i>
+                <div id="searchResults"></div>
+            </div>
+
+            <!-- Header action icons -->
+            <div class="header-icons">
+                <i class="fas fa-heart icon"></i>
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i></a>
+                <i class="fas fa-user-circle icon"></i>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs Section: Navigation path -->
+        <div class="breadcrumbs-container">
+            <div class="container">
+                <!-- Dynamic breadcrumbs will be loaded here -->
+                <div id="breadcrumbs"></div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <main class="product-detail-page-content">
+            <!-- Product Detail Container -->
+            <div class="product-detail-container">
+                <div class="product-image-area">
+                    <img id="productImage" src="images/placeholder.png" alt="Product Image">
+                </div>
+                <!-- Product Information Area (dynamic)-->
+                <div class="product-info-area">
+                    <h1 id="productName">Product Name</h1>
+                    <p class="product-price" id="productPrice">P0.00</p>
+                    <div class="product-rating">
+                        <span class="stars" id="productStars"></span>
+                        <span id="productReviews">(0/5)</span>
+                    </div>
+
+                    <!-- Product description (dynamic) -->
+                    <p class="product-description" id="productDescription">This is a detailed description of the product.</p>
+
+                    <!-- Quantity Selector -->
+                    <div class="product-quantity-selector">
+                        <button id="decreaseQuantity">-</button>
+                        <input type="number" id="productQuantity" value="1" min="1">
+                        <button id="increaseQuantity">+</button>
+                    </div>
+
+                    <!-- Product Action Buttons -->
+                    <div class="product-actions">
+                        <button class="add-to-cart-now-btn" id="addToCartBtnSingle">Add to cart</button>
+                        <button class="add-to-favorites-btn" id="addToFavoritesBtn">Add to Favorites</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- External JavaScript file for dynamic functionality -->
+        <script src="script.js"></script>
+    </body>
+</html>

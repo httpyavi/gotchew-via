@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page setup: Encoding, viewport, title, fonts, and styles -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gotchew - Checkout</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Header: Logo, navigation, search bar, and user icons -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/gotchew_black.png" alt="Gotchew Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="shop.html">Chew & Shop</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon" id="searchTriggerIcon"></i>
+                <input type="text" placeholder="Sniff out something fun..." id="searchInput">
+                <i class="fas fa-times-circle clear-search-icon" id="clearSearchIcon"></i>
+                <div id="searchResults"></div>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-heart icon"></i>
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i></a>
+                <a href="user.html"><i class="fas fa-user-circle icon"></i></a>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs: Navigation path -->
+        <div class="breadcrumbs-container">
+            <div class="container">
+                <div id="breadcrumbs">
+                    <a href="homepage.html">Home</a>
+                    <a href="shop.html">Chew & Shop</a>
+                    <a href="cart.html">View Cart</a>
+                    <span>Checkout</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content: Checkout form and order summary -->
+        <main class="main-content">
+            <div class="container">
+                <div class="checkout-page-content">
+                    <!-- Billing Details: User information form -->
+                    <div class="billing-details-section">
+                        <h2>Billing Details</h2>
+                        <form id="checkoutForm" class="billing-form">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="streetAddress">Street Address <span class="required">*</span></label>
+                                <input type="text" id="streetAddress" name="streetAddress" placeholder="House number and street name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartment">Apartment, floor, etc. (Optional)</label>
+                                <input type="text" id="apartment" name="apartment" placeholder="Apartment, floor, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="townCity">Town/City <span class="required">*</span></label>
+                                <input type="text" id="townCity" name="townCity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address <span class="required">*</span></label>
+                                <input type="email" id="emailAddress" name="emailAddress" required>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="saveInfo" name="saveInfo">
+                                <label for="saveInfo">Save this information for faster check-out next time</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Order Summary: Cart items, costs, payment options -->
+                    <div class="order-summary-section">
+                        <h2>Your Order</h2>
+                        <!-- Empty cart message -->
+                        <div id="emptyCheckoutCartMessage" class="empty-checkout-cart-message">
+                            Your cart is empty.
+                            <a href="shop.html" class="continue-shopping-text">Continue Shopping</a>
+                        </div>
+                        <!-- Checkout content -->
+                        <div id="checkoutCartContent">
+                            <div class="checkout-cart-items" id="checkoutCartItemsContainer">
+                                <!-- Cart items dynamically populated -->
+                            </div>
+
+                            <!-- Cost breakdown -->
+                            <div class="order-summary-details">
+                                <div class="order-summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="checkoutSubtotal">P0.00</span>
+                                </div>
+                                <div class="order-summary-row" id="checkoutDiscountRow" style="display: none;">
+                                    <span>Discount (<span id="checkoutDiscountPercentage">0</span>%):</span>
+                                    <span id="checkoutDiscount">-P0.00</span>
+                                </div>
+                                <div class="order-summary-row">
+                                    <span>Shipping:</span>
+                                    <span id="checkoutDeliveryFee">P0.00</span>
+                                </div>
+                                <div class="order-summary-row total-row">
+                                    <span>Total:</span>
+                                    <span id="checkoutTotal">P0.00</span>
+                                </div>
+                            </div>
+
+                            <!-- Payment Methods -->
+                            <h2>Payment Method</h2>
+                            <div class="payment-methods">
+                                <div class="payment-option">
+                                    <input type="radio" id="bankPayment" name="paymentMethod" value="Bank" checked>
+                                    <label for="bankPayment">Bank</label>
+                                    <img src="images/bank.png" alt="Bank">
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="codPayment" name="paymentMethod" value="Cash on Delivery">
+                                    <label for="codPayment">Cash on delivery</label>
+                                </div>
+                            </div>
+
+                            <!-- Promo code input -->
+                            <div class="promo-code checkout-promo">
+                                <input type="text" id="checkoutPromoCodeInput" placeholder="Coupon Code">
+                                <button id="applyCheckoutPromoCode">Apply Coupon</button>
+                            </div>
+
+                            <button class="place-order-btn" id="placeOrderBtn">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Newsletter Section: Subscription form -->
+        <section class="newsletter-section">
+            <div class="container">
+                <h2 class="newsletter-heading">WANT DEALS THAT MAKE YOUR TAILS WAG?</h2>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button>Subscribe to our Newsletter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Branding, links, and social icons -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/gotchew_black.png" alt="Gotchew Logo">
+                    </div>
+                    <p class="footer-description">We've got treats, toys, and essentials your pets will love — From our paws to yours.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>MY ACCOUNT</h3>
+                    <ul>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">My Order History</a></li>
+                        <li><a href="#">My Wish List</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FAQ</h3>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Manage Deliveries</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Payments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>HELP</h3>
+                    <ul>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Delivery Details</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Gotchew 2025. All Rights Reserved</p>
+            </div>
+        </footer>
+        <!-- External JavaScript for dynamic functionality -->
+        <script src="script.js"></script>
+    </body>
+</html>

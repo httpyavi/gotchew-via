@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css"></head>
+    <body>
+        <!-- Top Banner: Promotional message -->
+        <div class="top-banner">
+            Nationwide delivery. Free shipping for orders P2,500 and above within Metro Manila! Use GOTCHEW10 for discount.
+        </div>
+
+        <!-- Header: Logo, navigation, search bar, and user icons -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/gotchew_black.png" alt="Gotchew Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="shop.html">Chew & Shop</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon" id="searchTriggerIcon"></i>
+                <input type="text" placeholder="Sniff out something fun..." id="searchInput">
+                <i class="fas fa-times-circle clear-search-icon" id="clearSearchIcon"></i>
+                <div id="searchResults"></div>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-heart icon"></i> 
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i></a>
+                <a href="user.html"><i class="fas fa-user-circle icon"></i></a>
+            </div>
+        </header>
+
+        <!-- User's Details -->
+        <main class="user-content">
+            <div class="user-profile-box">
+                <div class="user-profile-pic">
+                    <img src="images/adminIMG.png" alt="User Profile Picture">
+                </div>
+                <h2 class="user-name">Admin Via Celis</h2>
+                <p class="user-email">admin@gmail.com</p>
+                <div class="user-details">
+                    <p><strong>Joined:</strong> May 27, 2025</p>
+                    <p><strong>Bio:</strong> Pet lover and proud paw-rent to two adorable dogs, Taro and Tofu. Always on the lookout for the best treats and toys!</p>
+                    <p><strong>Location:</strong> Metro Manila, Philippines</p>
+                    <p><strong>Favorite Pet Category:</strong> Toys & Enrichment</p>
+                </div>
+                <a href="index.html" class="logout-button" id="logoutButton">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <div id="logoutMessage" class="logout-message"></div>
+            </div>
+        </main>
+
+        <!-- Footer: Branding, links, and social icons -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/gotchew_black.png" alt="GotChew Logo">
+                    </div>
+                    <p class="footer-description">We've got treats, toys, and essentials your pets will love — From our paws to yours.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>MY ACCOUNT</h3>
+                    <ul>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">My Order History</a></li>
+                        <li><a href="#">My Wish List</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>FAQ</h3>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Manage Deliveries</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Payments</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>HELP</h3>
+                    <ul>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Delivery Details</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© GotChew 2025. All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script>
+            const logoutButton = document.getElementById('logoutButton');
+            const logoutMessage = document.getElementById('logoutMessage');
+
+            logoutButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+
+                // Show logout success message
+                logoutMessage.textContent = 'Logging out...';
+                logoutMessage.classList.add('success');
+
+                // Simulate logout and redirect to login page after a short delay
+                setTimeout(() => {
+                    // In a real application, you would clear session data here
+                    window.location.href = 'index.html';
+                }, 1000); // 1-second delay to show the message
+            });
+        </script>
+    </body>
+</html>
