@@ -1,12 +1,13 @@
-# SIT Website (My Version)
+# GotChew - Pet Things E-Commerce
 
-This is my personal version of the **School of Information and Technology (SIT)** website.  
-I built it using **HTML, CSS, and JavaScript** as part of my ITD101L Final Project to practice front-end web development and apply my own design and layout ideas.
+**GotChew** is a personal e-commerce project where I built a website for **pet products** using **HTML, CSS, and JavaScript**.  
+This project was created to practice web development and design a functional online store interface with a pet-friendly theme.
 
 ## 🌟 Features
-- Custom design inspired by the SIT website  
-- Responsive layout for different screen sizes  
-- Organized structure with images, videos, and other resources
+- Browse pet products with images, prices, and descriptions  
+- Add items to a shopping cart  
+- Interactive UI elements (buttons, modals, etc.)  
+- Responsive design for desktop and mobile  
 
 ## 🛠️ Built With
 - **HTML5**  
@@ -14,4 +15,4 @@ I built it using **HTML, CSS, and JavaScript** as part of my ITD101L Final Proje
 - **JavaScript**
 
 ## ⚠️ Disclaimer
-This project is for **educational purposes only** and is **not an official** SIT website.
+This project is for **educational purposes only** and is **not a real online store**.
